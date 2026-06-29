@@ -4,11 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-
 public class ProfanityAssister {
     private static HttpURLConnection connection;
     public static boolean isProfanity(String message) {
@@ -19,8 +17,8 @@ public class ProfanityAssister {
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setDoOutput(true); // url output intent := true
             String json = "{\"message\":\"" + message + "\"}";
-            connection.setConnectTimeout(500); // 5 seconds response time
-            connection.setReadTimeout(500); // 5 seconds read time
+            connection.setConnectTimeout(500); // 5ms response time
+            connection.setReadTimeout(500); // 5ms read time
             connection.getOutputStream().write(json.getBytes()); // returns the output
 
             InputStreamReader isr = new InputStreamReader(connection.getInputStream());
@@ -33,12 +31,10 @@ public class ProfanityAssister {
             output = output.substring(2,19).replace("\"", "");
             return output.contains("true");
 
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch(URISyntaxException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (URISyntaxException f) {
+            f.printStackTrace();
         }
         return false;
     }

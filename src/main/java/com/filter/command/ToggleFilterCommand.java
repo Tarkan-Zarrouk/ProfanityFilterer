@@ -30,7 +30,7 @@ public class ToggleFilterCommand {
             if(!toggleFilter)
                 return message;
             if(ProfanityAssister.isProfanity(message)) {
-                return message.replace(message, "[REDACTED]");
+                return "*".repeat(message.length());
             } 
             return message;
         });
