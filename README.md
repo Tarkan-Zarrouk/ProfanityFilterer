@@ -15,3 +15,13 @@ This is a simple profanity filter plugin for Minecraft version 1.21.11. It helps
 
 # Usage
 Once the mod is installed, use the command `/toggleProfanityFilter` in the chat to enable or disable the profanity filter. The filter will automatically block any offensive words or phrases defined in the configuration.
+
+# Example
+<p style="text-align:center">Before being enabled: </p>
+
+![Before Profanity Filter](assets/before.png)
+
+
+<p style="text-align:center">After being enabled: </p>
+
+![Before Profanity Filter](assets/after.png)
