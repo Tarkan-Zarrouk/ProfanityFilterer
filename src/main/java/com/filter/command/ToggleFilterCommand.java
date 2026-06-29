@@ -15,17 +15,24 @@ public class ToggleFilterCommand {
     public static void init() {
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, __) -> {
             dispatcher.register(ClientCommandManager.literal("toggleProfanityFilter").executes(context -> {
-                toggleFilter = !toggleFilter;
-                if(toggleFilter) {
-                    MutableComponent clientTag = Component.literal("[ProfanityFilter] enabled").withStyle(ChatFormatting.LIGHT_PURPLE);
-                    Minecraft.getInstance().player.displayClientMessage(clientTag, false);
-                } else {
-                    MutableComponent clientTag = Component.literal("[ProfanityFilter] disabled").withStyle(ChatFormatting.LIGHT_PURPLE);
-                    Minecraft.getInstance().player.displayClientMessage(clientTag, false);
-                }
+                syntaxResponseHelper();
                 return 1;
             }));
         });
+        clientChatMessageHelper();
+    }
+    private static void syntaxResponseHelper() {
+        toggleFilter = !toggleFilter;
+        if(toggleFilter) {
+            MutableComponent clientTag = Component.literal("[ProfanityFilter] enabled").withStyle(ChatFormatting.LIGHT_PURPLE);
+            Minecraft.getInstance().player.displayClientMessage(clientTag, false);
+            } else {
+                MutableComponent clientTag = Component.literal("[ProfanityFilter] disabled").withStyle(ChatFormatting.LIGHT_PURPLE);
+                Minecraft.getInstance().player.displayClientMessage(clientTag, false);
+            }
+        
+    }
+    private static void clientChatMessageHelper() {
         ClientSendMessageEvents.MODIFY_CHAT.register((message) -> {
             if(!toggleFilter)
                 return message;
