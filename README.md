@@ -1,6 +1,6 @@
 # ProfanityFilterer For Minecraft 1.21.11
 
-This is a simple profanity filter plugin for Minecraft version 1.21.11. It helps to keep the chat clean by filtering out offensive words and phrases.
+This is a multithreaded Minecraft mod that filters out offensive words and phrases from the chat. It is designed to enhance the gaming experience by promoting a more positive and respectful environment.
 
 # Building the Mod
 1. Clone the repository to your local machine.
