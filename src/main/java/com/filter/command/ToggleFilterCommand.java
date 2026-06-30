@@ -17,6 +17,9 @@ public class ToggleFilterCommand {
             dispatcher.register(ClientCommandManager.literal("toggleProfanityFilter").executes(context -> {
                 syntaxResponseHelper();
                 return 1;
+            }).then(ClientCommandManager.literal("customFilter")).executes(context -> {
+                customFilteringHelper();
+                return 1;
             }));
         });
         clientChatMessageHelper();
@@ -32,6 +35,10 @@ public class ToggleFilterCommand {
             }
         
     }
+    private static void customFilteringHelper() {
+
+    }
+
     private static void clientChatMessageHelper() {
         ClientSendMessageEvents.MODIFY_CHAT.register((message) -> {
             if(!toggleFilter)

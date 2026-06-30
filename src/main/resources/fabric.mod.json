@@ -3,20 +3,19 @@
 	"id": "profanityfilterer",
 	"version": "${version}",
 	"name": "ProfanityFilterer",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Profanity Filterer Mod, sanitizes swear words to ensure family-friendly gameplay!",
 	"authors": [
-		"Me!"
+		"LarryTheCat_"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"GitHub": "https://www.github.com/tarkan-zarrouk/ProfanityFilterer"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/profanityfilterer/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "ProfanityFilterer"
+          "com.filter.ProfanityFilterer"
 		]
 	},
 	"mixins": [

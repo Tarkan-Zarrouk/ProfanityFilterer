@@ -1,5 +1,6 @@
 package com.filter;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.client.Minecraft;
 import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
