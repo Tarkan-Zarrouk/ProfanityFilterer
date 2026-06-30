@@ -1,5 +1,4 @@
 package com.filter;
-
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.Identifier;
 

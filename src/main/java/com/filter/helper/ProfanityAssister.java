@@ -45,7 +45,6 @@ public class ProfanityAssister {
                 }
             }
         });
-        // System.out.println(isProfanity);
         return isProfanity;
     }
 }
